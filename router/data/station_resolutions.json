@@ -1,0 +1,236 @@
+{
+ "4463": {
+  "reason": null,
+  "resolved": true,
+  "result": {
+   "evidence": {
+    "attribution": "(c) OpenStreetMap contributors, ODbL",
+    "display_name": "QuikTrip, 3512, South Main Street, Lindale, Smith County, Texas, 75706, United States",
+    "distance_from_city_mi": 2.05,
+    "osm_class": "highway",
+    "osm_id": 1415418352,
+    "osm_type": "services",
+    "query": "QUIKTRIP, Lindale, TX, USA",
+    "shared_tokens": [
+     "QUIKTRIP"
+    ]
+   },
+   "lat": 32.4699185,
+   "lon": -95.3869991,
+   "source": "osm_nominatim_identity"
+  },
+  "ts": 1794917389.851384
+ },
+ "52548": {
+  "reason": "poi:no_candidates",
+  "resolved": false,
+  "result": null,
+  "ts": 1794916275.3134832
+ },
+ "60540": {
+  "reason": null,
+  "resolved": true,
+  "result": {
+   "evidence": {
+    "attribution": "(c) OpenStreetMap contributors, ODbL",
+    "display_name": "Circle K, 2256, North Trade Days Boulevard, Canton, Van Zandt County, Texas, 75103, United States",
+    "distance_from_city_mi": 1.64,
+    "osm_class": "shop",
+    "osm_id": 758462611,
+    "osm_type": "convenience",
+    "query": "CIRCLE K, Canton, TX, USA",
+    "shared_tokens": [
+     "CIRCLE"
+    ]
+   },
+   "lat": 32.5766476,
+   "lon": -95.8544777,
+   "source": "osm_nominatim_identity"
+  },
+  "ts": 1794917389.7209508
+ },
+ "60787": {
+  "reason": "poi:no_candidates",
+  "resolved": false,
+  "result": null,
+  "ts": 1794917395.3185098
+ },
+ "6093": {
+  "reason": null,
+  "resolved": true,
+  "result": {
+   "evidence": {
+    "attribution": "(c) OpenStreetMap contributors, ODbL (Geofabrik extract)",
+    "csv_address_exit": "I-80 & US-183, EXIT 257",
+    "distance_from_city_mi": 1.93,
+    "distance_from_csv_exit_mi": 0.15,
+    "identity_level": "brand+city (the #901 branch number is not separately verified)",
+    "note": "Nominatim name searches (city-scoped and exit-viewbox, bounded) returned no result; the POI exists in the Geofabrik Nebraska extract 0.15 mi from the exit named in the CSV address.",
+    "osm_name": "ONE9 Fuel Stop",
+    "osm_nodes": [
+     12094850510,
+     12094850511
+    ],
+    "osm_tags": {
+     "amenity": "fuel",
+     "brand": "ONE9",
+     "name": "ONE9 Fuel Stop"
+    },
+    "reproduce": "osmium/osmread over nebraska-latest.osm.pbf (Geofabrik, downloaded 2026-11-17): nodes 12094850510/12094850511, amenity=fuel brand=ONE9, at 40.6925,-99.3813; exit-junction index key 'ne|I80|257' from the same extract.",
+    "shared_tokens": [
+     "ONE9"
+    ]
+   },
+   "lat": 40.6920754,
+   "lon": -99.3814919,
+   "source": "osm_poi_offline_extract"
+  },
+  "ts": 1794916262.4961615
+ },
+ "64558": {
+  "reason": "poi:no_candidates",
+  "resolved": false,
+  "result": null,
+  "ts": 1794917391.3247714
+ },
+ "65198": {
+  "reason": null,
+  "resolved": true,
+  "result": {
+   "evidence": {
+    "attribution": "(c) OpenStreetMap contributors, ODbL",
+    "display_name": "Circle K, 3100, MS 469, Florence, Rankin County, Mississippi, 39073, United States",
+    "distance_from_city_mi": 0.07,
+    "osm_class": "amenity",
+    "osm_id": 1168188642,
+    "osm_type": "fuel",
+    "query": "CIRCLE K, Florence, MS, USA",
+    "shared_tokens": [
+     "CIRCLE"
+    ]
+   },
+   "lat": 32.155197,
+   "lon": -90.1236187,
+   "source": "osm_nominatim_identity"
+  },
+  "ts": 1794917399.3770554
+ },
+ "65287": {
+  "reason": "poi:no_candidates",
+  "resolved": false,
+  "result": null,
+  "ts": 1794916276.8946662
+ },
+ "68368": {
+  "reason": null,
+  "resolved": true,
+  "result": {
+   "evidence": {
+    "attribution": "(c) OpenStreetMap contributors, ODbL",
+    "caveat": "position is the highway exit stated in the station's own CSV address; the lot position within ~0.5 mi of the junction is not separately verified",
+    "csv_address": "I-80 EX 360",
+    "distance_from_city_mi": 5.19,
+    "highway_corrected": false,
+    "node_spread_mi": 0.6,
+    "osm_junction_nodes": [
+     1658633074,
+     1658633068
+    ],
+    "parsed_exit": "360",
+    "parsed_highway": "I80"
+   },
+   "lat": 40.821931,
+   "lon": -97.4637365,
+   "source": "csv_address_exit_junction"
+  },
+  "ts": 1794915950.546292
+ },
+ "69085": {
+  "reason": null,
+  "resolved": true,
+  "result": {
+   "evidence": {
+    "attribution": "(c) OpenStreetMap contributors, ODbL",
+    "csv_address_exit": "US-80, EXIT 126 (CSV; the highway at that exit is I-80)",
+    "distance_from_csv_exit_mi": 0.24,
+    "geocoder": "Nominatim",
+    "identity_level": "operator-published street address, geocoded once (way 14137229)",
+    "nominatim_display_name": "100, Prospector Drive, Ogallala, Keith County, Nebraska, 69153, United States",
+    "nominatim_query": "100 Prospector Drive, Ogallala, NE, USA",
+    "operator": "Fat Dogs (fatdogs.com)",
+    "operator_address": "100 Prospector Drive, Ogallala, NE (schema.org LocalBusiness, operator site)",
+    "operator_url": "https://www.fatdogs.com/location/ogallala-travel-center",
+    "osm_class": "place",
+    "osm_id": 14137229,
+    "osm_type": "way",
+    "reproduce": "curl 'https://nominatim.openstreetmap.org/search?q=100+Prospector+Drive%2C+Ogallala%2C+NE%2C+USA&format=json' (identifying User-Agent) + operator page https://www.fatdogs.com/location/ogallala-travel-center (schema.org LocalBusiness streetAddress '100 Prospector Drive'), both fetched 2026-11-17."
+   },
+   "lat": 41.112147,
+   "lon": -101.71563,
+   "source": "operator_address_geocoded"
+  },
+  "ts": 1794916262.4961627
+ },
+ "69840": {
+  "resolved": true,
+  "result": {
+   "evidence": {
+    "attribution": "(c) OpenStreetMap contributors, ODbL",
+    "display_name": "Kum & Go, Wickersham Boulevard, Gretna, Forest City No. 1 Precinct, Sarpy County, Nebraska, 68138, United States",
+    "distance_from_city_mi": 2.21,
+    "osm_class": "amenity",
+    "osm_id": 603161711,
+    "osm_type": "fuel",
+    "query": "KUM & GO, Gretna, NE, USA",
+    "shared_tokens": [
+     "GO",
+     "KUM"
+    ]
+   },
+   "lat": 41.1460714,
+   "lon": -96.1620072,
+   "source": "osm_nominatim_identity"
+  },
+  "ts": 1794915095.1955361
+ },
+ "71325": {
+  "reason": null,
+  "resolved": true,
+  "result": {
+   "evidence": {
+    "attribution": "(c) OpenStreetMap contributors, ODbL",
+    "display_name": "QuikTrip, 4344, East Texas Street, Whitehurst, Bossier City, Bossier Parish, Louisiana, 71111, United States",
+    "distance_from_city_mi": 1.24,
+    "osm_class": "highway",
+    "osm_id": 1415390821,
+    "osm_type": "services",
+    "query": "QUIKTRIP, Bossier City, LA, USA",
+    "shared_tokens": [
+     "QUIKTRIP"
+    ]
+   },
+   "lat": 32.5317414,
+   "lon": -93.6744171,
+   "source": "osm_nominatim_identity"
+  },
+  "ts": 1794917398.1851296
+ },
+ "71858": {
+  "reason": "poi:no_candidates",
+  "resolved": false,
+  "result": null,
+  "ts": 1794917394.1759982
+ },
+ "72695": {
+  "reason": "poi:no_candidates",
+  "resolved": false,
+  "result": null,
+  "ts": 1794917396.6305199
+ },
+ "72758": {
+  "reason": "poi:no_identity_match_in_radius",
+  "resolved": false,
+  "result": null,
+  "ts": 1794917393.5165935
+ }
+}

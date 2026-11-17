@@ -1,0 +1,12 @@
+# Python / Django
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local state and generated artifacts
+db.sqlite3
+media/
+
+# Environment / secrets
+.env

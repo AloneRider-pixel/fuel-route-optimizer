@@ -184,17 +184,19 @@ Generated at runtime (git-ignored): `db.sqlite3` (via `migrate`) and `media/` (r
 
 ```bash
 # 0. Requires Python 3.12+ (Django 6.1 drops older Pythons).
-python --version   # 3.12 or newer
+python3 --version   # 3.12 or newer; on macOS use python3.14 if installed
 
-# 1. Open the project folder (this repo root)
-cd fuel_route_api_project
+# 1. Clone, then open the project root containing manage.py.
+git clone https://github.com/AloneRider-pixel/fuel-route-optimizer.git
+cd fuel-route-optimizer
+# ZIP alternative: extract it and open the folder containing manage.py.
 
 # 2. Create & activate a virtual environment (recommended)
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 
-# 3. Install dependencies
-pip install -r requirements.txt
+# 3. Install dependencies in that environment
+python -m pip install -r requirements.txt
 
 # 4. Apply migrations
 python manage.py migrate
@@ -230,6 +232,24 @@ Vehicle and corridor constants live in `fuel_route_api/settings.py`:
 `VEHICLE_MPG` (10), `VEHICLE_RANGE_MILES` (500), `STATION_CORRIDOR_MILES` (10).
 
 ---
+
+## Map display and tile policy
+
+Maps use the canonical HTTPS OpenStreetMap tile endpoint, visible contributor
+attribution, and `strict-origin-when-cross-origin` so the browser sends its
+actual origin to the tile service. The route is fitted into the map viewport.
+These settings follow the [OSM tile policy](https://operations.osmfoundation.org/policies/tiles/);
+they do not guarantee service availability or remove an existing block.
+Do not spoof headers, bypass caches, proxy around blocks, or repeatedly reload
+blocked tiles. If tiles remain blocked, stop and investigate the actual browser
+request headers or choose a separately approved compliant provider.
+
+Existing HTML files under `media/` are generated artifacts and are not rewritten
+by a source update. Preserve an existing demo plan/map when applying a local fix;
+do not recalculate routes just to refresh the tile template.
+
+Map regression checks are offline. The suite now has 55 tests, including
+canonical tiles/attribution/viewport and response-referrer-policy checks.
 
 ## API
 

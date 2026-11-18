@@ -773,3 +773,30 @@ class LookupBudgetTests(TestCase):
                 opt.plan_with_verification(route, resolver, max_station_lookups=3)
         self.assertIn('lookup budget', str(ctx.exception))
         self.assertLessEqual(resolver.calls_made, 4)  # capped, not 20 attempts x N stops
+
+
+class MapComplianceTests(TestCase):
+    """Offline rendering checks: no requests to any tile service."""
+
+    def test_map_uses_canonical_tiles_attribution_and_route_bounds(self):
+        from pathlib import Path
+        from .map_gen import build_route_map
+        route = [RoutePoint(41.8781, -87.6298), RoutePoint(39.7392, -104.9903)]
+        with tempfile.TemporaryDirectory() as directory:
+            with override_settings(MEDIA_ROOT=directory):
+                output = build_route_map(route, [], route[0], route[-1])
+                html = Path(output).read_text()
+        self.assertIn('https://tile.openstreetmap.org/{z}/{x}/{y}.png', html)
+        self.assertNotIn('{s}.tile.openstreetmap.org', html)
+        self.assertIn('OpenStreetMap contributors', html)
+        self.assertIn('fitBounds(', html)
+        self.assertIn('[[41.8781, -87.6298], [39.7392, -104.9903]]', html)
+
+    def test_media_response_sends_origin_compatible_referrer_policy(self):
+        from django.http import HttpResponse
+        from django.middleware.security import SecurityMiddleware
+        from django.test import RequestFactory
+        response = SecurityMiddleware(lambda request: HttpResponse('<html></html>'))(
+            RequestFactory().get('/media/test_map.html')
+        )
+        self.assertEqual(response['Referrer-Policy'], 'strict-origin-when-cross-origin')

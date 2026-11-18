@@ -185,3 +185,7 @@ STATION_LOCATIONS_PATH = BASE_DIR / 'router' / 'data' / 'station_locations.json'
 # Generated route maps are stored here (served under /media/).
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# OSM tiles require the browser's genuine Referer on cross-origin requests.
+# Send only our origin, not the map path. Do not spoof request headers.
+SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'

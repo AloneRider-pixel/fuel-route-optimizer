@@ -27,10 +27,17 @@ def build_route_map(route_geometry, stops, start_point: RoutePoint,
 
     # Center map on route start.
     center = [start_point.lat, start_point.lon]
-    m = folium.Map(location=center, zoom_start=5, tiles='OpenStreetMap')
+    m = folium.Map(
+        location=center,
+        zoom_start=5,
+        tiles='https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+        attr='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+    )
 
     # Route polyline (lat, lon) pairs.
     line = [[p.lat, p.lon] for p in route_geometry]
+    if line:
+        m.fit_bounds(line, padding=(20, 20))
     folium.PolyLine(
         locations=line,
         color='#0066cc',

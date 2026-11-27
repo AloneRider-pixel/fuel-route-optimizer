@@ -65,7 +65,7 @@ map/route-API calls = 1 OSRM route + 1 OSRM waypoint measurement
 the map/route API is ideal, two or three is acceptable". Other services, disclosed
 separately: at most 2 Nominatim endpoint geocodes (0 for `lat,lng`
 inputs) + at most `max_station_lookups=25` rate-limited Nominatim station
-lookups - a REAL global cap enforced per lookup in code (tested), since
+lookups - a REAL cap enforced per request in code (tested), since
 `max_attempts=20` bounds re-plan iterations, not lookups. Cold-corridor
 worst case: 4 + 2 + 25 = **31 external calls** (~30 s from the polite
 1.1 s spacing), then the request fails with a clear retryable error if
@@ -397,7 +397,7 @@ the suite runs fully offline in ~16 s.
 * **Other external calls, disclosed separately** (the brief's budget names
   the map/route API; these are different services and are NOT hidden):
   <= 2 Nominatim endpoint geocodes (0 for `lat,lng` inputs) + <= 25
-  rate-limited Nominatim station lookups (a real enforced global cap,
+  rate-limited Nominatim station lookups (a real enforced per-request cap,
   tested). Cold worst case: 30 calls, ~30 s; cached afterwards (90/30-day
   TTL), so a warm corridor makes **4 external calls total**, ~4-9 s.
 * CSV + locations are loaded once per process; price indexes are O(1).
